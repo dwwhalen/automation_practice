@@ -1,4 +1,4 @@
-class BasePage
+class BasePage < SitePrism::Page
 
   def initialize(the_browser)
     @browser = the_browser
@@ -20,8 +20,14 @@ class BasePage
 
   def select_menu_item(menu_item)
 
-    element = @browser.find_element(:xpath, "//a[contains(.,'" + menu_item + "')]")
-    element.click
+   #element = @browser.find_element(:xpath, "//a[contains(.,'" + menu_item + "')]")
+   #element.click
+
+   sleep(5)
+    #@browser.wait_for_username(10)
+    #@browser.should have_content(menu_item)
+    @browser.click_link(menu_item)
+    #@browser.find(:xpath, "//a[contains(.,'" + menu_item + "')]").click
 
   end
 

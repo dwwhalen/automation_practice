@@ -1,7 +1,12 @@
 Given(/^I access the login page$/) do
-  @browser = Selenium::WebDriver.for :firefox if @browser.nil?
+  #@browser = Selenium::WebDriver.for :firefox if @browser.nil?
+  #@myloginpage = LoginPage.new @browser
+  #@myloginpage.visit('http://phptravels.net/login/')
+
+
+  @browser = Capybara::Session.new(:selenium)
   @myloginpage = LoginPage.new @browser
-  @myloginpage.visit('http://phptravels.net/login/')
+  @browser.visit "http://phptravels.net/login/"
 
 end
 
