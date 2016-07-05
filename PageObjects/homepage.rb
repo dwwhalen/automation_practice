@@ -1,8 +1,5 @@
-class HomePage < BasePage
+class HomePage < SitePrism::Page
 
-  def initialize(the_browser)
-    @browser = the_browser
-  end
-
+  set_url 'http://phptravels.net/account/'
 
 end

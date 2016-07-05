@@ -11,8 +11,7 @@ class BasePage < SitePrism::Page
 
   def logout
     sleep(5)
-    element = @browser.find_element(:class, 'show-submenu')
-    element.click
+    @browser.click_link('John')
     sleep(5)
     element = @browser.find_element(:xpath, "//a[contains(.,'Logout')]")
     element.click()

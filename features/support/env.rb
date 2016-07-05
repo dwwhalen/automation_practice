@@ -34,12 +34,12 @@ Capybara.register_driver :selenium do |app|
       # Closest thing I could find for chromedriver - http://peter.sh/experiments/chromium-command-line-switches/#aggressive-tab-discard
       # :args => ['aggressive-tab-discard=false']
   }
-    Capybara.default_max_wait_time = 10
+    #Capybara.default_max_wait_time = 10
     Capybara::Selenium::Driver.new(app, :detach => false, :browser => :chrome, :desired_capabilities => caps)
 
 end
 
 
-After do
+After do |scenario|
   Capybara.current_session.driver.browser.quit
 end
