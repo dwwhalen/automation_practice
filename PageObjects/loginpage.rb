@@ -1,8 +1,8 @@
 class LoginPage < SitePrism::Page
-  set_url "http://phptravels.net/login/"
-
+  set_url 'http://phptravels.net/login/'
 
   sleep(5)
+
   element :username_field, "input[name='username']"
   element :password_field, "input[name='password']"
   element :login_button, "button[type='submit']", :text => 'Login'

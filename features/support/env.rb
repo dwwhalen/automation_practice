@@ -5,10 +5,14 @@ require 'capybara/dsl'
 require 'capybara/cucumber'
 require 'selenium-webdriver'
 require 'site_prism'
-require './PageObjects/basepage.rb'
-require './PageObjects/loginpage.rb'
-require './PageObjects/homepage.rb'
+require 'require_all'
+#require './PageObjects/basepage.rb'
+#require './PageObjects/loginpage.rb'
+#require './PageObjects/homepage.rb'
 require './assertions.rb'
+
+require_rel '../../PageObjects'
+require_rel '../../PageObjects/common'
 
 Capybara.default_driver = :selenium
 
