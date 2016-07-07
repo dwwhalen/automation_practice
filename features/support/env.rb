@@ -15,7 +15,6 @@ require_rel '../../PageObjects'
 require_rel '../../PageObjects/common'
 
 Capybara.default_driver = :selenium
-
 Capybara.register_driver :selenium do |app|
 
   prefs = {
@@ -31,7 +30,6 @@ Capybara.register_driver :selenium do |app|
   caps['chromeOptions'] = {
       'prefs' => prefs,
       :excludeSwitches => ['ignore-certificate-errors'],
-      # TODO: Nick - 06/15/16
       # Chrome has an flag to only render tabs when they are clicked on and active
       # Which caused problems with validating content on that tab
       # The flag is called Automatic Tab Discarding - chrome://flags/#automatic-tab-discarding
@@ -41,9 +39,4 @@ Capybara.register_driver :selenium do |app|
     #Capybara.default_max_wait_time = 10
     Capybara::Selenium::Driver.new(app, :detach => false, :browser => :chrome, :desired_capabilities => caps)
 
-end
-
-
-After do |scenario|
-  Capybara.current_session.driver.browser.quit
 end

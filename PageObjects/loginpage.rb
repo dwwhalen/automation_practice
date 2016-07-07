@@ -1,7 +1,7 @@
 class LoginPage < SitePrism::Page
-  set_url 'http://phptravels.net/login/'
+  set_url 'http://phptravels.net/login'
 
-  sleep(5)
+  section :top_nav_section, TopNavSection, 'div.navbar-collapse'
 
   element :username_field, "input[name='username']"
   element :password_field, "input[name='password']"

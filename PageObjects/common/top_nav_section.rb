@@ -16,4 +16,12 @@ class TopNavSection < SitePrism::Section
     HotelsPage.new
   end
 
+  def click_tours
+    x = menu_options
+
+    x[2].click
+
+    ToursPage.new
+  end
+
 end
