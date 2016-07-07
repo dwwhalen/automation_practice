@@ -8,15 +8,12 @@ Feature: Login
   Scenario: Successful login
     Then the Home page is displayed
 
-  Scenario Outline: View menu links
+  Scenario: View Hotels link
     And the Home page is displayed
-    When I choose the <link_text> link
-    Then the <page_title> page is displayed
-  Examples:
-    | link_text | page_title  |
-    |Hotels     |Hotels       |
-    |Tours      |Tours        |
-    #|Flights    |Flights      |
-    #|Cars       |Cars         |
-    #|Offers     |Offers       |
-    #|Blog       |Blog         |
+    When I choose the Hotels link
+    Then the Hotels page is displayed
+
+  Scenario: View Tours link
+    And the Home page is displayed
+    When I choose the Tours link
+    Then the Hotels page is displayed

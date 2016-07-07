@@ -8,20 +8,8 @@ class TopNavSection < SitePrism::Section
 
   elements :menu_options, 'li.go-right'
 
-  def click_hotels
-    x = menu_options
-
-    x[1].click
-
-    HotelsPage.new
-  end
-
-  def click_tours
-    x = menu_options
-
-    x[2].click
-
-    ToursPage.new
+  def click_link (link_id)
+    menu_options[link_id].click
   end
 
 end

@@ -19,7 +19,7 @@ class LoginPage < SitePrism::Page
     password_field.set(password)
     login_button.click
 
-    HomePage.new
+    #HomePage.new
   end
 
 end
