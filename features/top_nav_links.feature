@@ -1,19 +1,17 @@
 Feature: Top Nav Links
 
   Background:
-    Given I access the login page
-    And the Login page is displayed
-    And I login with id "user@phptravels.com" and password "demouser"
+    Given I login with id "user@phptravels.com" and password "demouser"
+    And I choose the Home link
 
   Scenario: View Hotels link
-    And the Home page is displayed
     When I choose the Hotels link
     Then the Hotels page is displayed
 
-Scenario: View Tours link
-  And the Home page is displayed
-  When I choose the Tours link
-  Then the Tours page is displayed
+  Scenario: View Tours link
+    And the Home page is displayed
+    When I choose the Tours link
+    Then the Tours page is displayed
 
   Scenario: View Flights link
     And the Home page is displayed

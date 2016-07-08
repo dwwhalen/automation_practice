@@ -2,7 +2,7 @@ require 'colorize'
 
 require 'capybara'
 require 'capybara/dsl'
-require 'capybara/cucumber'
+#require 'capybara/cucumber'
 require 'selenium-webdriver'
 require 'site_prism'
 require 'require_all'
@@ -13,6 +13,9 @@ require './assertions.rb'
 
 require_rel '../../PageObjects'
 require_rel '../../PageObjects/common'
+
+ENV['BROWSER_SHUTDOWN'] = 'on'
+ENV['TIMESTAMP'] = 'on'
 
 Capybara.default_driver = :selenium
 Capybara.register_driver :selenium do |app|
@@ -37,6 +40,7 @@ Capybara.register_driver :selenium do |app|
       # :args => ['aggressive-tab-discard=false']
   }
     #Capybara.default_max_wait_time = 10
-    Capybara::Selenium::Driver.new(app, :detach => false, :browser => :chrome, :desired_capabilities => caps)
+    #Capybara::Selenium::Driver.new(app, :detach => false, :browser => :chrome, :desired_capabilities => caps)
+    Capybara::Selenium::Driver.new(app, :browser => :chrome)
 
 end

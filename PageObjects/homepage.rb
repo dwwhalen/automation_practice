@@ -1,6 +1,6 @@
 class HomePage < SitePrism::Page
 
-  set_url 'http://phptravels.net/account/'
+  set_url 'http://phptravels.net'
 
   section :top_nav_section, TopNavSection, 'div.navbar-collapse'
 

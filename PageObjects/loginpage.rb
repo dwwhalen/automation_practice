@@ -5,6 +5,7 @@ class LoginPage < SitePrism::Page
 
   element :username_field, "input[name='username']"
   element :password_field, "input[name='password']"
+  element :remember_me_checkbox, "#remember-me"
   element :login_button, "button[type='submit']", :text => 'Login'
 
   def login id, password
@@ -17,8 +18,8 @@ class LoginPage < SitePrism::Page
 
     username_field.set(id)
     password_field.set(password)
+    remember_me_checkbox.click
     login_button.click
-
     #HomePage.new
   end
 

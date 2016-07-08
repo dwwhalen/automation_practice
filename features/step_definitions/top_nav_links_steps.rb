@@ -1,4 +1,13 @@
 
+When(/^I choose the Home link$/) do
+  @current_page.top_nav_section.click_link 0
+end
+
+Then(/^the Home page is displayed$/) do
+  @current_page = HomePage.new
+  expect(@current_page).to be_displayed
+end
+
 When(/^I choose the Hotels link$/) do
   @current_page.top_nav_section.click_link 1
 end
@@ -56,3 +65,4 @@ end
 When(/^I choose the Logoff link$/) do
   @current_page.top_nav_section.logout
 end
+
