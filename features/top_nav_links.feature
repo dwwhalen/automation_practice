@@ -34,3 +34,4 @@ Scenario: View Tours link
     And the Home page is displayed
     When I choose the Blog link
     Then the Blog page is displayed
+

@@ -8,12 +8,7 @@ Feature: Login
   Scenario: Successful login
     Then the Home page is displayed
 
-  Scenario: View Hotels link
+  Scenario: Logoff
     And the Home page is displayed
-    When I choose the Hotels link
-    Then the Hotels page is displayed
-
-  Scenario: View Tours link
-    And the Home page is displayed
-    When I choose the Tours link
-    Then the Hotels page is displayed
+    When I choose the Logoff link
+    Then the Login page is displayed
