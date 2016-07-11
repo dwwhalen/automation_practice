@@ -6,6 +6,8 @@ class LoginPage < SitePrism::Page
   element :username_field, "input[name='username']"
   element :password_field, "input[name='password']"
   element :remember_me_checkbox, "#remember-me"
+  elements :forgot_password, ".whitelink"
+  elements :social_media_elements, ".social-icons-footer"
   element :login_button, "button[type='submit']", :text => 'Login'
 
   def login id, password
@@ -20,7 +22,22 @@ class LoginPage < SitePrism::Page
     password_field.set(password)
     remember_me_checkbox.click
     login_button.click
-    #HomePage.new
+    return AccountPage.new
   end
 
+  def click_on_facebook
+    social_media_elements[0].click
+    return ExternalPage.new
+  end
+
+  def click_on_twitter
+    social_media_elements[1].click
+    return ExternalPage.new
+  end
+
+  def click_on_googleplus
+    social_media_elements[2].click
+    return ExternalPage.new
+  end
+  \
 end

@@ -19,6 +19,7 @@ class TopNavSection < SitePrism::Section
   def logout
     user_dropdown[1].click
     logout_link[1].click
+    return LoginPage.new
   end
 
 end

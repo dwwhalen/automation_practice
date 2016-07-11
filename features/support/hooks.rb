@@ -21,3 +21,31 @@ Before do |scenario|
   # make sure this is starting with a clean slate
   #HISTORY.search_time = nil
 end
+
+After do |scenario|
+  #x = page.driver.browser.window_handles.length
+  if page.driver.browser.window_handles.length > 1
+    switch_to_main_window
+    close_popup_window
+  end
+
+end
+
+def switch_to_main_window
+  main_window = page.driver.browser.window_handles.first
+  page.driver.browser.switch_to.window(main_window)
+end
+
+def close_popup_window(window_order=2)
+  if page.driver.browser.window_handles.length > 1
+    starting_window = page.driver.browser.window_handle
+    pop_up_window = page.driver.browser.window_handles[window_order.to_i - 1]
+    page.driver.browser.switch_to.window(pop_up_window)
+    page.driver.browser.close
+    if starting_window.eql?(pop_up_window) # if we didn't switch to a different window before closing a popup, just get back to whatever window is open and go from there.
+      page.driver.browser.switch_to.window(page.driver.browser.window_handles.first)
+    else
+      page.driver.browser.switch_to.window(starting_window)
+    end
+  end
+end
