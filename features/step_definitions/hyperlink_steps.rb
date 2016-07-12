@@ -1,6 +1,7 @@
 And(/^the user opens a browser and navigates to the "([^"]*)" page$/) do |arg|
   @login_page = LoginPage.new
   @login_page.load
+  expect(@login_page).to be_displayed
 end
 
 
@@ -13,6 +14,8 @@ When(/^the user selects the "([^"]*)" option$/) do |hyperlink_to_click|
       @hyperlinked_page = @login_page.click_on_facebook
     when "google_plus"
       @hyperlinked_page = @login_page.click_on_googleplus
+    when "contact"
+      @hyperlinked_page = @login_page.click_on_contact
     else
       puts "invalid hyperlink_to_click: " + hyperlink_to_click
   end

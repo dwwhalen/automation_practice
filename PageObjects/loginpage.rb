@@ -6,11 +6,19 @@ class LoginPage < SitePrism::Page
   element :username_field, "input[name='username']"
   element :password_field, "input[name='password']"
   element :remember_me_checkbox, "#remember-me"
+  element :facebook, :xpath, "html/body/div[8]/div/div[2]/div[4]/div[2]/a[1]/img"
+  element :twitter, :xpath, "html/body/div[8]/div/div[2]/div[4]/div[2]/a[2]/img"
+  element :googleplus, :xpath, "html/body/div[8]/div/div[2]/div[4]/div[2]/a[3]/img"
+
   elements :forgot_password, ".whitelink"
   elements :social_media_elements, ".social-icons-footer"
   element :login_button, "button[type='submit']", :text => 'Login'
+  element :contact, :xpath, "html/body/div[8]/div/div[4]/ul/li[1]/a"
+
+
 
   def login id, password
+    @test_value = 'test value'
     #@browser.find_element(:name, "username").send_keys id
     #@browser.find_element(:name, "password").send_keys password
     #@browser.find_element(:class, 'loginbtn').click
@@ -26,18 +34,24 @@ class LoginPage < SitePrism::Page
   end
 
   def click_on_facebook
-    social_media_elements[0].click
+    facebook.click
     return ExternalPage.new
   end
 
   def click_on_twitter
-    social_media_elements[1].click
+    twitter.click
     return ExternalPage.new
   end
 
   def click_on_googleplus
-    social_media_elements[2].click
+    googleplus.click
     return ExternalPage.new
   end
-  \
+
+  def click_on_contact
+
+    contact.click
+    return ExternalPage.new
+  end
+
 end

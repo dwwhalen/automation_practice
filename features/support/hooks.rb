@@ -1,6 +1,7 @@
 Before do |scenario|
   Capybara.default_max_wait_time = 30
   Capybara.ignore_hidden_elements = true
+  page.driver.browser.manage.window.maximize
   $scenario_start_time = Time.now
 
   # the timestamp is turned off by default.

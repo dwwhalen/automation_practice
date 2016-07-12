@@ -18,6 +18,8 @@ end
 
 Then(/^the Login page is displayed$/) do
   expect(@login_page).to be_displayed
+  puts 'yo: '
+  puts  @test_value
 end
 
 ####################

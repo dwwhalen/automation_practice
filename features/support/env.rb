@@ -43,4 +43,6 @@ Capybara.register_driver :selenium do |app|
     #Capybara::Selenium::Driver.new(app, :detach => false, :browser => :chrome, :desired_capabilities => caps)
     Capybara::Selenium::Driver.new(app, :browser => :chrome)
 
+
+
 end
