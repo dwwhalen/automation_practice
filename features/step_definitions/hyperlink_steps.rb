@@ -1,7 +1,7 @@
 And(/^the user opens a browser and navigates to the "([^"]*)" page$/) do |arg|
-  @login_page = LoginPage.new
-  @login_page.load
-  expect(@login_page).to be_displayed
+  #@login_page = LoginPage.new
+  LOGIN_PAGE.load
+  expect(LOGIN_PAGE).to be_displayed
 end
 
 

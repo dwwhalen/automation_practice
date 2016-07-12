@@ -1,25 +1,24 @@
 When(/^I login with id "([^"]*)" and password "([^"]*)"$/) do |id, password|
 
-  @login_page = LoginPage.new
-  @login_page.load
+  LOGIN_PAGE.load_page
 
-  if @login_page.title == 'Login'
-    @account_page = @login_page.login(id, password)
+  if LOGIN_PAGE.title == 'Login'
+    LOGIN_PAGE.login(id, password)
   end
 end
 
 And(/^the Account page is displayed$/) do
-  expect(@account_page).to be_displayed
+  ACCOUNT_PAGE.wait_for_page_load
+  assert((ACCOUNT_PAGE.has_fields?), 'FAILURE: Not all Account fields were present when we expected them to be.')
 end
 
 When(/^I choose the Logoff link$/) do
-  @account_page.top_nav_section.logout
+  ACCOUNT_PAGE.choose_to_logout
 end
 
 Then(/^the Login page is displayed$/) do
-  expect(@login_page).to be_displayed
-  puts 'yo: '
-  puts  @test_value
+  LOGIN_PAGE.wait_for_page_load
+  assert((LOGIN_PAGE.has_fields?), 'FAILURE: Not all login fields were present when we expected them to be.')
 end
 
 ####################

@@ -6,16 +6,24 @@ require 'capybara/cucumber'
 require 'selenium-webdriver'
 require 'site_prism'
 require 'require_all'
+require 'test-unit'
+require 'test/unit/assertions'
 #require './PageObjects/externalpage.rb'
-#require './PageObjects/loginpage.rb'
+#require './PageObjects/login_page.rb'
 #require './PageObjects/homepage.rb'
 require './assertions.rb'
 
 require_rel '../../PageObjects'
 require_rel '../../PageObjects/common'
 
+include Capybara::DSL
+include Test::Unit::Assertions
+
+EXTENDED_WAIT_TIME = 60
+
 ENV['BROWSER_SHUTDOWN'] = 'on'
 ENV['TIMESTAMP'] = 'on'
+ENV['HOME_URL'] = 'http://phptravels.net/login'
 
 Capybara.default_driver = :selenium
 Capybara.register_driver :selenium do |app|
@@ -42,7 +50,10 @@ Capybara.register_driver :selenium do |app|
     #Capybara.default_max_wait_time = 10
     #Capybara::Selenium::Driver.new(app, :detach => false, :browser => :chrome, :desired_capabilities => caps)
     Capybara::Selenium::Driver.new(app, :browser => :chrome)
-
-
-
+    #Capybara.current_session.driver.browser.manage.window.maximize
 end
+
+# ---- constants ----
+
+  LOGIN_PAGE = Login.new
+  ACCOUNT_PAGE = Account.new
