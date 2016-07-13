@@ -6,7 +6,7 @@ class Account
 
   def wait_for_page_load
     @current_page.wait_for_bookings(EXTENDED_WAIT_TIME)
-    sleep 0.3 # the site_prism wait (above) has a habit of waiting a fraction of a second too short
+    sleep 2 # the site_prism wait (above) has a habit of waiting a fraction of a second too short
   end
 
   def has_fields?
@@ -17,4 +17,9 @@ class Account
     #@current_page.top_nav_section.logout
     @current_page.top_nav_section.logout
   end
+
+  def click_home_link
+    @current_page.top_nav_section.click_link 0
+  end
+
 end

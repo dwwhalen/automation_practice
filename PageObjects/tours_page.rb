@@ -4,4 +4,6 @@ class ToursPage < SitePrism::Page
 
   section :top_nav_section, TopNavSection, 'div.navbar-collapse'
 
+  element :tour_type_drop_down, ".listing-search"
+
 end

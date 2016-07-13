@@ -1,38 +1,39 @@
 
 When(/^I choose the Home link$/) do
-  @login_page.top_nav_section.click_link 0
+  ACCOUNT_PAGE.click_home_link
 end
 
 Then(/^the Home page is displayed$/) do
-  @login_page = HomePage.new
-  expect(@login_page).to be_displayed
+  HOME_PAGE.wait_for_page_load
+  assert((HOME_PAGE.has_fields?), 'FAILURE: Not all Home fields were present when we expected them to be.')
 end
 
 When(/^I choose the Hotels link$/) do
-  @login_page.top_nav_section.click_link 1
+  HOME_PAGE.click_hotels_link
 end
 
 Then(/^the Hotels page is displayed$/) do
-  @login_page = HotelsPage.new
-  expect(@login_page).to be_displayed
+  HOTELS_PAGE.wait_for_page_load
+  assert((HOTELS_PAGE.has_fields?), 'FAILURE: Not all Hotels fields were present when we expected them to be.')
+
 end
 
 When(/^I choose the Tours link$/) do
-  @login_page.top_nav_section.click_link 2
+  HOME_PAGE.click_tours_link
 end
 
 Then(/^the Tours page is displayed$/) do
-  @login_page = ToursPage.new
-  expect(@login_page).to be_displayed
+  TOURS_PAGE.wait_for_page_load
+  assert((TOURS_PAGE.has_fields?), 'FAILURE: Not all Tours fields were present when we expected them to be.')
 end
 
 When(/^I choose the Flights link$/) do
-  @login_page.top_nav_section.click_link 3
+  HOME_PAGE.click_flights_link
 end
 
 Then(/^the Flights page is displayed$/) do
-  @login_page = FlightsPage.new
-  expect(@login_page).to be_displayed
+  FLIGHTS_PAGE.wait_for_page_load
+  assert((FLIGHTS_PAGE.has_fields?), 'FAILURE: Not all Flights fields were present when we expected them to be.')
 end
 
 When(/^I choose the Cars link$/) do

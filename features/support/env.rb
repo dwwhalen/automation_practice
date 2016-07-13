@@ -10,7 +10,7 @@ require 'test-unit'
 require 'test/unit/assertions'
 #require './PageObjects/externalpage.rb'
 #require './PageObjects/login_page.rb'
-#require './PageObjects/homepage.rb'
+#require './PageObjects/home_page.rb'
 require './assertions.rb'
 
 require_rel '../../PageObjects'
@@ -19,7 +19,7 @@ require_rel '../../PageObjects/common'
 include Capybara::DSL
 include Test::Unit::Assertions
 
-EXTENDED_WAIT_TIME = 60
+EXTENDED_WAIT_TIME = 30
 
 ENV['BROWSER_SHUTDOWN'] = 'on'
 ENV['TIMESTAMP'] = 'on'
@@ -57,3 +57,7 @@ end
 
   LOGIN_PAGE = Login.new
   ACCOUNT_PAGE = Account.new
+  HOME_PAGE = Home.new
+  HOTELS_PAGE = Hotels.new
+  TOURS_PAGE = Tours.new
+  FLIGHTS_PAGE = Flights.new

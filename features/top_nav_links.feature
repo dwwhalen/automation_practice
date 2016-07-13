@@ -1,8 +1,10 @@
 Feature: Top Nav Links
 
   Background:
-    Given I login with id "user@phptravels.com" and password "demouser"
+    #Given I login with id "user@phptravels.com" and password "demouser"
+    Given the user opens a browser and navigates to the "Login" page
     And I choose the Home link
+    And the Home page is displayed
 
   Scenario: View Hotels link
     When I choose the Hotels link

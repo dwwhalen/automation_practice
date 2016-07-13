@@ -4,6 +4,7 @@ When(/^I login with id "([^"]*)" and password "([^"]*)"$/) do |id, password|
 
   if LOGIN_PAGE.title == 'Login'
     LOGIN_PAGE.login(id, password)
+    ACCOUNT_PAGE.wait_for_page_load
   end
 end
 
@@ -18,7 +19,7 @@ end
 
 Then(/^the Login page is displayed$/) do
   LOGIN_PAGE.wait_for_page_load
-  assert((LOGIN_PAGE.has_fields?), 'FAILURE: Not all login fields were present when we expected them to be.')
+  assert((LOGIN_PAGE.has_fields?), 'FAILURE: Not all Login fields were present when we expected them to be.')
 end
 
 ####################

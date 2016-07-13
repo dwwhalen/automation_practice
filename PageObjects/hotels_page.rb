@@ -4,4 +4,6 @@ class HotelsPage < SitePrism::Page
 
   section :top_nav_section, TopNavSection, 'div.navbar-collapse'
 
+  element :location_textbox, "#adults"
+
 end
