@@ -4,4 +4,6 @@ class BlogPage < SitePrism::Page
 
   section :top_nav_section, TopNavSection, 'div.navbar-collapse'
 
+  element :responsive_image, ".img-responsive"
+
 end

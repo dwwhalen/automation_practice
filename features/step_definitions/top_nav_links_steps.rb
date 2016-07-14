@@ -37,30 +37,30 @@ Then(/^the Flights page is displayed$/) do
 end
 
 When(/^I choose the Cars link$/) do
-  @login_page.top_nav_section.click_link 4
+  HOME_PAGE.click_cars_link
 end
 
 Then(/^the Cars page is displayed$/) do
-  @login_page = CarsPage.new
-  expect(@login_page).to be_displayed
+  CARS_PAGE.wait_for_page_load
+  assert((CARS_PAGE.has_fields?), 'FAILURE: Not all Cars fields were present when we expected them to be.')
 end
 
 When(/^I choose the Offers link$/) do
-  @login_page.top_nav_section.click_link 5
+  HOME_PAGE.click_offers_link
 end
 
 Then(/^the Offers page is displayed$/) do
-  @login_page = OffersPage.new
-  expect(@login_page).to be_displayed
+  OFFERS_PAGE.wait_for_page_load
+  assert((OFFERS_PAGE.has_fields?), 'FAILURE: Not all Offers fields were present when we expected them to be.')
 end
 
 When(/^I choose the Blog link$/) do
-  @login_page.top_nav_section.click_link 6
+  HOME_PAGE.click_blog_link
 end
 
 Then(/^the Blog page is displayed$/) do
-  @login_page = BlogPage.new
-  expect(@login_page).to be_displayed
+  BLOG_PAGE.wait_for_page_load
+  assert((BLOG_PAGE.has_fields?), 'FAILURE: Not all Blog fields were present when we expected them to be.')
 end
 
 

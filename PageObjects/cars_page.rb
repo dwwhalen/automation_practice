@@ -4,4 +4,6 @@ class CarsPage < SitePrism::Page
 
   section :top_nav_section, TopNavSection, 'div.navbar-collapse'
 
+  element :location_drop_down, "#carlocations"
+
 end

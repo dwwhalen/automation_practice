@@ -29,4 +29,15 @@ class Home
     @current_page.top_nav_section.click_link 3
   end
 
+  def click_cars_link
+    @current_page.top_nav_section.click_link 4
+  end
+
+  def click_offers_link
+    @current_page.top_nav_section.click_link 5
+  end
+
+  def click_blog_link
+    @current_page.top_nav_section.click_link 6
+  end
 end

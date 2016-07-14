@@ -61,3 +61,6 @@ end
   HOTELS_PAGE = Hotels.new
   TOURS_PAGE = Tours.new
   FLIGHTS_PAGE = Flights.new
+  CARS_PAGE = Cars.new
+  BLOG_PAGE = Blog.new
+  OFFERS_PAGE = Offers.new

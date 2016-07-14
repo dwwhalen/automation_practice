@@ -4,4 +4,6 @@ class OffersPage < SitePrism::Page
 
   section :top_nav_section, TopNavSection, 'div.navbar-collapse'
 
+  element :wish_list, ".img-responsive"
+
 end
